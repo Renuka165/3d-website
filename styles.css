@@ -1,0 +1,69 @@
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.scene {
+    width: 200px;
+    height: 200px;
+    perspective: 600px;
+}
+
+.pyramid {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-100px) rotateX(-20deg) rotateY(45deg);
+    transition: transform 1s;
+}
+
+.pyramid:hover {
+    transform: translateZ(-100px) rotateX(-20deg) rotateY(225deg);
+}
+
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.front {
+    background: rgba(255, 0, 0, 0.7);
+    transform: rotateY(0deg) translateZ(100px) rotateX(30deg) translateY(-100px);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.right {
+    background: rgba(0, 255, 0, 0.7);
+    transform: rotateY(90deg) translateZ(100px) rotateX(30deg) translateY(-100px);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.back {
+    background: rgba(0, 0, 255, 0.7);
+    transform: rotateY(180deg) translateZ(100px) rotateX(30deg) translateY(-100px);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.left {
+    background: rgba(255, 255, 0, 0.7);
+    transform: rotateY(-90deg) translateZ(100px) rotateX(30deg) translateY(-100px);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.bottom {
+    background: rgba(255, 0, 255, 0.7);
+    transform: rotateX(-90deg) translateZ(100px);
+}
